@@ -1632,3 +1632,124 @@ body {
     }
 
 }
+/* ==================================================
+   GLOBAL CELESTIAL PAGE ACCENTS
+   ================================================== */
+
+body {
+    position: relative;
+}
+
+
+/* LEFT SIDE ACCENT */
+
+body::before {
+
+    content: "✦";
+
+    position: fixed;
+
+    left: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--gold);
+
+    font-size: 0.8rem;
+
+    opacity: 0.65;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+}
+
+
+/* RIGHT SIDE ACCENT */
+
+body::after {
+
+    content: "✧";
+
+    position: fixed;
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--gold-light);
+
+    font-size: 0.75rem;
+
+    opacity: 0.55;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+}
+
+
+/* ==================================================
+   DECORATIVE SECTION ACCENTS
+   ================================================== */
+
+.introduction::before,
+.worlds-section::before,
+.currently-section::before,
+.thoughts-section::before {
+
+    content: "───── ✦ ─────";
+
+    display: block;
+
+    margin: 0 auto 35px;
+
+    width: fit-content;
+
+    color: var(--gold);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.6;
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    body::before {
+
+        left: 7px;
+
+    }
+
+
+    body::after {
+
+        right: 7px;
+
+    }
+
+
+    .introduction::before,
+    .worlds-section::before,
+    .currently-section::before,
+    .thoughts-section::before {
+
+        margin-bottom: 25px;
+
+        font-size: 0.55rem;
+
+    }
+
+}
