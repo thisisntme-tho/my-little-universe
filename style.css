@@ -1,1342 +1,342 @@
 /* ==================================================
-   MY LITTLE UNIVERSE
-   Celestial Journal Homepage
-   ================================================== */
+WORDS THAT STAYED
+================================================== */
 
+.words-section {
+
+```
+padding: 120px 5% 140px;
+
+background:
+    radial-gradient(
+        circle at 50% 30%,
+        #1d3028,
+        #0b1512 70%
+    );
+
+position: relative;
+
+overflow: hidden;
+```
+
+}
+
+/* Subtle celestial atmosphere */
+
+.words-section::before {
+
+```
+content: "✦     ·       ✧        ·     ✦";
+
+position: absolute;
+
+top: 55px;
+
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 100%;
+
+text-align: center;
+
+color: rgba(200,173,114,.25);
+
+font-size: 1rem;
+
+letter-spacing: 1.2em;
+
+pointer-events: none;
+```
+
+}
+
+.quote-grid {
+
+```
+display: grid;
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+gap: 35px;
+
+max-width: 1000px;
+
+margin: auto;
+```
+
+}
 
 /* ==================================================
-   ROOT COLORS
-   ================================================== */
+QUOTE CARD
+================================================== */
 
-:root {
+.quote-card {
 
-    --night: #101b18;
-    --deep-night: #09110f;
+```
+position: relative;
 
-    --forest: #1c3029;
-    --forest-light: #30483d;
+min-height: 390px;
 
-    --gold: #c8ad72;
-    --gold-light: #e0ca91;
+padding: 38px 45px;
 
-    --cream: #eee5d2;
-    --parchment: #d9ccb2;
+display: flex;
 
-    --text-light: #eee7d8;
-    --text-muted: #bdb49f;
+flex-direction: column;
 
-    --shadow: rgba(0, 0, 0, 0.45);
+justify-content: center;
+
+text-align: center;
+
+background:
+    linear-gradient(
+        145deg,
+        rgba(35,54,45,.96),
+        rgba(10,20,16,.98)
+    );
+
+border:
+    1px solid rgba(200,173,114,.32);
+
+box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+
+transition:
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+```
+
 }
 
+.quote-card::before {
+
+```
+content: "";
+
+position: absolute;
+
+inset: 8px;
+
+border:
+    1px solid rgba(200,173,114,.08);
+
+pointer-events: none;
+```
+
+}
+
+.quote-card:hover {
+
+```
+transform: translateY(-8px);
+
+border-color: rgba(224,202,145,.7);
+
+box-shadow:
+    0 25px 60px rgba(0,0,0,.5),
+    0 0 30px rgba(200,173,114,.07);
+```
+
+}
 
 /* ==================================================
-   BASIC RESET
-   ================================================== */
+QUOTE HEADER
+================================================== */
 
-* {
-    box-sizing: border-box;
+.quote-top {
+
+```
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+gap: 8px;
+
+margin-bottom: 28px;
+```
+
 }
 
-html {
-    scroll-behavior: smooth;
+.quote-symbol {
+
+```
+color: var(--gold-light);
+
+font-size: 1.3rem;
+```
+
 }
 
-body {
+.quote-label {
 
-    margin: 0;
+```
+color: var(--gold);
 
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            #1b2b26 0%,
-            var(--night) 45%,
-            var(--deep-night) 100%
-        );
+font-family:
+    "Montserrat",
+    sans-serif;
 
-    color: var(--text-light);
+font-size: .58rem;
 
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
+letter-spacing: .3em;
 
-    overflow-x: hidden;
+text-transform: uppercase;
+```
+
 }
-
 
 /* ==================================================
-   NAVIGATION
-   ================================================== */
+QUOTE
+================================================== */
 
-.site-header {
+.quote-card blockquote {
 
-    position: absolute;
+```
+margin: 0 auto;
 
-    top: 0;
-    left: 0;
+max-width: 720px;
 
-    width: 100%;
+color: var(--cream);
 
-    z-index: 100;
+font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-    padding: 28px 40px;
-}
+font-size: clamp(1.65rem, 3vw, 2.25rem);
 
+font-weight: 400;
 
-.navigation {
+font-style: italic;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 42px;
+line-height: 1.25;
+```
 
 }
-
-
-.nav-link {
-
-    position: relative;
-
-    color: var(--cream);
-
-    text-decoration: none;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 1.05rem;
-
-    letter-spacing: 0.15em;
-
-    text-transform: uppercase;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-
-}
-
-
-.nav-link::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: -10px;
-
-    width: 0;
-
-    height: 1px;
-
-    background: var(--gold);
-
-    transform: translateX(-50%);
-
-    transition: width 0.3s ease;
-
-}
-
-
-.nav-link:hover,
-.nav-link.active {
-
-    color: var(--gold-light);
-
-}
-
-
-.nav-link:hover::after,
-.nav-link.active::after {
-
-    width: 30px;
-
-}
-
 
 /* ==================================================
-   HERO
-   ================================================== */
+DIVIDER
+================================================== */
 
-.hero {
+.quote-divider {
 
-    position: relative;
+```
+margin: 28px 0 14px;
 
-    min-height: 850px;
+color: var(--gold);
 
-    height: 100vh;
-
-    max-height: 1000px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(53, 76, 64, 0.45),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            to bottom,
-            #08100e 0%,
-            #111e1a 60%,
-            #0a1411 100%
-        );
+font-size: .8rem;
+```
 
 }
-
 
 /* ==================================================
-   STARS
-   ================================================== */
+ATTRIBUTION
+================================================== */
 
-.stars {
+.quote-author {
 
-    position: absolute;
+```
+margin: 0;
 
-    inset: 0;
+color: var(--gold-light);
 
-    pointer-events: none;
+font-family:
+    "Montserrat",
+    sans-serif;
 
-}
+font-size: .7rem;
 
+letter-spacing: .12em;
 
-.stars::before,
-.stars::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 3px;
-
-    height: 3px;
-
-    background: var(--gold-light);
-
-    border-radius: 50%;
-
-    box-shadow:
-
-        7vw 12vh 0 0 rgba(224,202,145,.8),
-        15vw 28vh 0 0 rgba(224,202,145,.5),
-        24vw 8vh 0 0 rgba(224,202,145,.7),
-        31vw 22vh 0 0 rgba(224,202,145,.4),
-        40vw 14vh 0 0 rgba(224,202,145,.8),
-        49vw 27vh 0 0 rgba(224,202,145,.6),
-        58vw 10vh 0 0 rgba(224,202,145,.5),
-        67vw 24vh 0 0 rgba(224,202,145,.8),
-        76vw 13vh 0 0 rgba(224,202,145,.5),
-        86vw 30vh 0 0 rgba(224,202,145,.7),
-        94vw 11vh 0 0 rgba(224,202,145,.6),
-
-        11vw 48vh 0 0 rgba(224,202,145,.5),
-        22vw 39vh 0 0 rgba(224,202,145,.7),
-        35vw 52vh 0 0 rgba(224,202,145,.4),
-        62vw 45vh 0 0 rgba(224,202,145,.6),
-        73vw 52vh 0 0 rgba(224,202,145,.5),
-        88vw 43vh 0 0 rgba(224,202,145,.8);
-
-    animation: twinkle 5s infinite alternate;
+text-transform: uppercase;
+```
 
 }
 
+.quote-character {
 
-.stars::after {
+```
+margin: 7px 0 0;
 
-    width: 2px;
-    height: 2px;
+color: var(--text-muted);
 
-    opacity: 0.6;
+font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-    animation-delay: 2s;
+font-size: 1rem;
 
-}
-
-
-@keyframes twinkle {
-
-    from {
-        opacity: 0.35;
-    }
-
-    to {
-        opacity: 1;
-    }
+font-style: italic;
+```
 
 }
-
 
 /* ==================================================
-   CONSTELLATIONS
-   ================================================== */
+QUOTE CARD RESPONSIVE
+================================================== */
 
-.constellation {
+@media (max-width: 800px) {
 
-    position: absolute;
+```
+.quote-grid {
 
-    opacity: 0.5;
+    grid-template-columns: 1fr;
 
-}
-
-
-.constellation span {
-
-    display: block;
-
-    position: absolute;
-
-    width: 5px;
-
-    height: 5px;
-
-    background: var(--gold-light);
-
-    border-radius: 50%;
-
-    box-shadow: 0 0 10px rgba(224,202,145,.7);
+    max-width: 650px;
 
 }
 
 
-.constellation-one {
-
-    top: 22%;
-    left: 15%;
-
-    width: 170px;
-    height: 120px;
-
-}
-
-
-.constellation-one span:nth-child(1) {
-    left: 0;
-    top: 60px;
-}
-
-.constellation-one span:nth-child(2) {
-    left: 55px;
-    top: 5px;
-}
-
-.constellation-one span:nth-child(3) {
-    left: 115px;
-    top: 45px;
-}
-
-.constellation-one span:nth-child(4) {
-    left: 165px;
-    top: 0;
-}
-
-
-.constellation-one::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 5px;
-    left: 0;
-
-    width: 165px;
-    height: 70px;
-
-    border-top: 1px solid rgba(200,173,114,.3);
-
-    transform: rotate(18deg);
-
-}
-
-
-.constellation-two {
-
-    top: 24%;
-    right: 13%;
-
-    width: 170px;
-    height: 120px;
-
-}
-
-
-.constellation-two span:nth-child(1) {
-    left: 0;
-    top: 30px;
-}
-
-.constellation-two span:nth-child(2) {
-    left: 70px;
-    top: 80px;
-}
-
-.constellation-two span:nth-child(3) {
-    left: 145px;
-    top: 0;
-}
-
-
-.constellation-two::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 170px;
-
-    height: 100px;
-
-    border-bottom: 1px solid rgba(200,173,114,.3);
-
-    transform: rotate(-15deg);
-
-}
-
-
-/* ==================================================
-   MOON
-   ================================================== */
-
-.moon {
-
-    position: absolute;
-
-    top: 125px;
-
-    left: 50%;
-
-    width: 105px;
-
-    height: 105px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background: var(--gold-light);
-
-    box-shadow:
-        0 0 35px rgba(224,202,145,.25);
-
-}
-
-
-.moon::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: -8px;
-
-    left: 27px;
-
-    width: 105px;
-
-    height: 105px;
-
-    border-radius: 50%;
-
-    background: #0b1512;
-
-}
-
-
-/* ==================================================
-   HERO CONTENT
-   ================================================== */
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 10;
-
-    margin-top: 40px;
-
-}
-
-
-.eyebrow {
-
-    margin-bottom: 18px;
-
-    color: var(--gold);
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: 0.7rem;
-
-    letter-spacing: 0.35em;
-
-    text-transform: uppercase;
-
-}
-
-
-.hero h1 {
-
-    margin: 0;
-
-    color: var(--cream);
-
-    font-size: clamp(4rem, 9vw, 8rem);
-
-    font-weight: 400;
-
-    line-height: 0.85;
-
-    letter-spacing: 0.03em;
-
-    text-shadow:
-        0 4px 30px rgba(0,0,0,.5);
-
-}
-
-
-.hero h1 span {
-
-    display: block;
-
-    font-size: 0.52em;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-
-    margin-bottom: 14px;
-
-}
-
-
-.ornament {
-
-    margin: 30px 0;
-
-    color: var(--gold);
-
-    font-size: 0.9rem;
-
-    letter-spacing: 0.2em;
-
-}
-
-
-.hero-subtitle {
-
-    color: var(--parchment);
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 1.35rem;
-
-    font-style: italic;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.04em;
-
-}
-
-
-.explore-link {
-
-    display: inline-flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-top: 35px;
-
-    color: var(--gold-light);
-
-    text-decoration: none;
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: 0.7rem;
-
-    letter-spacing: 0.25em;
-
-    text-transform: uppercase;
-
-}
-
-
-.explore-link span {
-
-    font-size: 1.3rem;
-
-    transition: transform 0.3s ease;
-
-}
-
-
-.explore-link:hover span {
-
-    transform: translateY(6px);
-
-}
-
-
-/* ==================================================
-   MOUNTAINS
-   ================================================== */
-
-.mountains {
-
-    position: absolute;
-
-    bottom: 120px;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 240px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            transparent 50%,
-            #16241f 50%
-        );
-
-    clip-path:
-        polygon(
-            0 70%,
-            10% 48%,
-            20% 65%,
-            31% 35%,
-            42% 63%,
-            54% 28%,
-            65% 65%,
-            77% 40%,
-            88% 58%,
-            100% 30%,
-            100% 100%,
-            0 100%
-        );
-
-    opacity: 0.9;
-
-}
-
-
-/* ==================================================
-   FOREST
-   ================================================== */
-
-.forest {
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 150px;
-
-    background: #07100d;
-
-    clip-path:
-        polygon(
-            0 45%,
-            3% 20%,
-            5% 48%,
-            8% 15%,
-            10% 45%,
-            13% 22%,
-            15% 50%,
-            18% 10%,
-            20% 47%,
-            24% 18%,
-            27% 50%,
-            30% 12%,
-            33% 47%,
-            36% 22%,
-            39% 48%,
-            43% 10%,
-            46% 50%,
-            50% 15%,
-            53% 50%,
-            57% 8%,
-            60% 50%,
-            64% 20%,
-            67% 48%,
-            71% 12%,
-            74% 50%,
-            78% 17%,
-            81% 48%,
-            85% 8%,
-            88% 50%,
-            92% 20%,
-            96% 48%,
-            100% 10%,
-            100% 100%,
-            0 100%
-        );
-
-}
-
-
-/* ==================================================
-   INTRODUCTION
-   ================================================== */
-
-.introduction {
-
-    padding: 130px 25px 120px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #07100d,
-            #101b18
-        );
-
-}
-
-
-.section-ornament {
-
-    color: var(--gold);
-
-    font-size: 1.5rem;
-
-    margin-bottom: 25px;
-
-}
-
-
-.intro-small {
-
-    color: var(--gold);
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 0.3em;
-
-}
-
-
-.introduction h2 {
-
-    max-width: 700px;
-
-    margin: 25px auto;
-
-    color: var(--cream);
-
-    font-size: clamp(2rem, 4vw, 3.2rem);
-
-    font-weight: 400;
-
-    line-height: 1.2;
-
-}
-
-
-.intro-script {
-
-    color: var(--gold-light);
-
-    font-family:
-        "Parisienne",
-        cursive;
-
-    font-size: 2rem;
-
-}
-
-
-/* ==================================================
-   WORLDS SECTION
-   ================================================== */
-
-.worlds-section {
-
-    padding: 100px 5% 140px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #24382f,
-            #101b18 60%
-        );
-
-}
-
-
-.section-heading {
-
-    text-align: center;
-
-    margin-bottom: 60px;
-
-}
-
-
-.section-heading .eyebrow {
-
-    margin-bottom: 8px;
-
-}
-
-
-.section-heading h2 {
-
-    margin: 0;
-
-    color: var(--cream);
-
-    font-size: clamp(2.5rem, 5vw, 4rem);
-
-    font-weight: 400;
-
-}
-
-
-.heading-line {
-
-    margin-top: 20px;
-
-    color: var(--gold);
-
-    letter-spacing: 0.5em;
-
-}
-
-
-/* ==================================================
-   WORLD CARDS
-   ================================================== */
-
-.world-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(6, 1fr);
-
-    gap: 18px;
-
-    max-width: 1250px;
-
-    margin: auto;
-
-}
-
-
-.world-card {
+.quote-card {
 
     min-height: 350px;
 
-    padding: 35px 18px 25px;
+}
+```
 
-    display: flex;
+}
 
-    flex-direction: column;
+@media (max-width: 500px) {
 
-    justify-content: space-between;
+```
+.words-section {
 
-    align-items: center;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    color: var(--cream);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(38,58,48,.95),
-            rgba(12,22,18,.95)
-        );
-
-    border:
-
-        1px solid rgba(200,173,114,.35);
-
-    border-radius: 4px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.3);
-
-    transition:
-
-        transform .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease;
+    padding:
+        90px 20px 100px;
 
 }
 
 
-.world-card:hover {
+.quote-card {
 
-    transform: translateY(-10px);
+    min-height: 330px;
 
-    border-color: var(--gold);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.5),
-        0 0 25px rgba(200,173,114,.08);
+    padding:
+        32px 25px;
 
 }
 
 
-.card-icon {
+.quote-card blockquote {
 
-    font-size: 1.8rem;
-
-    filter: grayscale(30%);
+    font-size: 1.55rem;
 
 }
 
 
-.world-card h3 {
+.quote-label {
 
-    margin: 10px 0;
+    font-size: .52rem;
 
-    color: var(--gold-light);
-
-    font-size: 1.7rem;
-
-    font-weight: 400;
-
-    letter-spacing: 0.08em;
-
-    text-transform: uppercase;
+    letter-spacing: .2em;
 
 }
-
-
-.world-card p {
-
-    margin: 0;
-
-    color: var(--text-muted);
-
-    font-size: 1.05rem;
-
-    line-height: 1.4;
-
-}
-
-
-.card-arrow {
-
-    color: var(--gold);
-
-    font-size: 1.3rem;
-
-}
-
-
-/* ==================================================
-   CURRENTLY
-   ================================================== */
-
-.currently-section {
-
-    padding: 100px 5% 120px;
-
-    background: #0b1512;
-
-}
-
-
-.tiny-moon {
-
-    color: var(--gold-light);
-
-    font-size: 2rem;
-
-    margin-bottom: 10px;
-
-}
-
-
-.currently-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    border-top:
-        1px solid rgba(200,173,114,.25);
-
-    border-bottom:
-        1px solid rgba(200,173,114,.25);
-
-}
-
-
-.currently-card {
-
-    padding: 40px 25px;
-
-    text-align: center;
-
-    border-right:
-        1px solid rgba(200,173,114,.2);
-
-}
-
-
-.currently-card:last-child {
-
-    border-right: none;
-
-}
-
-
-.currently-icon {
-
-    font-size: 1.5rem;
-
-}
-
-
-.currently-label {
-
-    color: var(--gold);
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 0.2em;
-
-    text-transform: uppercase;
-
-}
-
-
-.currently-content {
-
-    color: var(--cream);
-
-    font-size: 1.2rem;
-
-    font-style: italic;
-
-}
-
-
-/* ==================================================
-   FOOTER
-   ================================================== */
-
-.site-footer {
-
-    padding: 80px 25px;
-
-    text-align: center;
-
-    background: #07100d;
-
-}
-
-
-.footer-ornament {
-
-    color: var(--gold);
-
-    font-size: 1.5rem;
-
-}
-
-
-.footer-script {
-
-    margin: 20px 0;
-
-    color: var(--gold-light);
-
-    font-family:
-        "Parisienne",
-        cursive;
-
-    font-size: 2rem;
-
-    line-height: 1.4;
-
-}
-
-
-.footer-small {
-
-    margin-top: 40px;
-
-    color: var(--text-muted);
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: 0.6rem;
-
-    letter-spacing: 0.3em;
-
-    text-transform: uppercase;
-
-}
-
-
-/* ==================================================
-   TABLET
-   ================================================== */
-
-@media (max-width: 1000px) {
-
-    .navigation {
-
-        gap: 20px;
-
-    }
-
-
-    .nav-link {
-
-        font-size: 0.8rem;
-
-    }
-
-
-    .world-grid {
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-    }
-
-}
-
-
-/* ==================================================
-   MOBILE
-   ================================================== */
-
-@media (max-width: 700px) {
-
-    .site-header {
-
-        padding: 20px 15px;
-
-    }
-
-
-    .navigation {
-
-        gap: 12px;
-
-        flex-wrap: wrap;
-
-    }
-
-
-    .nav-link {
-
-        font-size: 0.65rem;
-
-        letter-spacing: 0.1em;
-
-    }
-
-
-    .hero {
-
-        min-height: 750px;
-
-    }
-
-
-    .moon {
-
-        top: 110px;
-
-        width: 75px;
-
-        height: 75px;
-
-    }
-
-
-    .moon::after {
-
-        width: 75px;
-
-        height: 75px;
-
-        left: 20px;
-
-    }
-
-
-    .hero-content {
-
-        padding: 0 20px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 4rem;
-
-    }
-
-
-    .hero-subtitle {
-
-        font-size: 1.1rem;
-
-    }
-
-
-    .constellation {
-
-        display: none;
-
-    }
-
-
-    .world-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .world-card {
-
-        min-height: 280px;
-
-        padding: 25px 12px;
-
-    }
-
-
-    .world-card h3 {
-
-        font-size: 1.3rem;
-
-    }
-
-
-    .world-card p {
-
-        font-size: .9rem;
-
-    }
-
-
-    .currently-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .currently-card:nth-child(2) {
-
-        border-right: none;
-
-    }
-
-
-    .currently-card:nth-child(1),
-    .currently-card:nth-child(2) {
-
-        border-bottom:
-            1px solid rgba(200,173,114,.2);
-
-    }
-
-}
-
-
-/* ==================================================
-   SMALL PHONES
-   ================================================== */
-
-@media (max-width: 450px) {
-
-    .world-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .currently-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .currently-card {
-
-        border-right: none;
-
-        border-bottom:
-            1px solid rgba(200,173,114,.2);
-
-    }
-
-
-    .currently-card:last-child {
-
-        border-bottom: none;
-
-    }
+```
 
 }
