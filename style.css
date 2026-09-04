@@ -1340,3 +1340,295 @@ body {
     }
 
 }
+/* ==================================================
+   LITTLE THOUGHTS / TWEETS
+   ================================================== */
+
+.thoughts-section {
+
+    padding: 120px 5% 130px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1a2b24,
+            #0b1512 65%
+        );
+
+}
+
+
+.thoughts-feed {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+}
+
+
+/* ==================================================
+   TWEET CARD
+   ================================================== */
+
+.tweet-card {
+
+    position: relative;
+
+    padding: 30px 35px 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(38,58,48,.9),
+            rgba(12,22,18,.95)
+        );
+
+    border:
+        1px solid rgba(200,173,114,.3);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.3);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.tweet-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(200,173,114,.65);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45);
+
+}
+
+
+/* ==================================================
+   TWEET HEADER
+   ================================================== */
+
+.tweet-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.tweet-avatar {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid rgba(200,173,114,.5);
+
+    border-radius: 50%;
+
+    color: var(--gold-light);
+
+    font-size: 1.25rem;
+
+    background:
+        rgba(7,16,13,.7);
+
+}
+
+
+.tweet-user {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.tweet-user strong {
+
+    color: var(--cream);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+}
+
+
+.tweet-user span {
+
+    color: var(--text-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+.tweet-mark {
+
+    margin-left: auto;
+
+    color: var(--gold);
+
+    font-size: 1rem;
+
+}
+
+
+/* ==================================================
+   TWEET TEXT
+   ================================================== */
+
+.tweet-text {
+
+    margin:
+
+        28px 10px
+
+        30px 10px;
+
+    color: var(--cream);
+
+    font-size: 1.55rem;
+
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    letter-spacing: 0.02em;
+
+}
+
+
+/* ==================================================
+   TWEET FOOTER
+   ================================================== */
+
+.tweet-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid rgba(200,173,114,.15);
+
+    color: var(--gold);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.75rem;
+
+}
+
+
+.tweet-footer span {
+
+    opacity: .7;
+
+}
+
+
+.tweet-footer em {
+
+    margin-left: auto;
+
+    color: var(--text-muted);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 0.95rem;
+
+}
+
+
+/* ==================================================
+   MOBILE TWEETS
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    .thoughts-section {
+
+        padding: 90px 20px 100px;
+
+    }
+
+
+    .tweet-card {
+
+        padding: 25px 22px 20px;
+
+    }
+
+
+    .tweet-text {
+
+        margin:
+
+            24px 4px
+
+            26px 4px;
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .tweet-avatar {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+}
