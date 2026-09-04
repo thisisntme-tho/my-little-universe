@@ -1,11 +1,11 @@
-```css
 /* ==================================================
    MY LITTLE UNIVERSE
+   Celestial Journal Homepage
    ================================================== */
 
 
 /* ==================================================
-   COLOR PALETTE
+   ROOT COLORS
    ================================================== */
 
 :root {
@@ -26,29 +26,32 @@
     --text-muted: #bdb49f;
 
     --shadow: rgba(0, 0, 0, 0.45);
-
 }
 
 
 /* ==================================================
-   RESET
+   BASIC RESET
    ================================================== */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
-
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
 
-    background: var(--deep-night);
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #1b2b26 0%,
+            var(--night) 45%,
+            var(--deep-night) 100%
+        );
 
     color: var(--text-light);
 
@@ -58,48 +61,6 @@ body {
         serif;
 
     overflow-x: hidden;
-
-}
-
-
-/* ==================================================
-   GLOBAL CELESTIAL EDGE ACCENTS
-   ================================================== */
-
-body::before,
-body::after {
-
-    content: "";
-
-    position: fixed;
-
-    top: 0;
-    bottom: 0;
-
-    width: 1px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(200,173,114,.22),
-            transparent
-        );
-
-    pointer-events: none;
-
-    z-index: 100;
-
-}
-
-
-body::before {
-    left: 18px;
-}
-
-
-body::after {
-    right: 18px;
 }
 
 
@@ -109,23 +70,16 @@ body::after {
 
 .site-header {
 
-    position: fixed;
+    position: absolute;
 
     top: 0;
     left: 0;
+
     width: 100%;
 
-    z-index: 50;
+    z-index: 100;
 
-    padding: 25px 5%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(9,17,15,.9),
-            transparent
-        );
-
+    padding: 28px 40px;
 }
 
 
@@ -146,22 +100,23 @@ body::after {
 
     position: relative;
 
-    color: var(--text-muted);
+    color: var(--cream);
 
     text-decoration: none;
 
     font-family:
-        "Montserrat",
-        sans-serif;
+        "Cormorant Garamond",
+        serif;
 
-    font-size: .65rem;
+    font-size: 1.05rem;
 
-    letter-spacing: .18em;
+    letter-spacing: 0.15em;
 
     text-transform: uppercase;
 
     transition:
-        color .3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 
 }
 
@@ -174,7 +129,7 @@ body::after {
 
     left: 50%;
 
-    bottom: -8px;
+    bottom: -10px;
 
     width: 0;
 
@@ -184,8 +139,7 @@ body::after {
 
     transform: translateX(-50%);
 
-    transition:
-        width .3s ease;
+    transition: width 0.3s ease;
 
 }
 
@@ -201,7 +155,7 @@ body::after {
 .nav-link:hover::after,
 .nav-link.active::after {
 
-    width: 20px;
+    width: 30px;
 
 }
 
@@ -214,22 +168,35 @@ body::after {
 
     position: relative;
 
-    min-height: 100vh;
+    min-height: 850px;
+
+    height: 100vh;
+
+    max-height: 1000px;
 
     display: flex;
 
+    justify-content: center;
+
     align-items: center;
 
-    justify-content: center;
+    text-align: center;
 
     overflow: hidden;
 
     background:
+
         radial-gradient(
             circle at 50% 35%,
-            #243a31 0%,
-            #15261f 35%,
-            #09110f 75%
+            rgba(53, 76, 64, 0.45),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #08100e 0%,
+            #111e1a 60%,
+            #0a1411 100%
         );
 
 }
@@ -247,47 +214,71 @@ body::after {
 
     pointer-events: none;
 
-    opacity: .75;
+}
+
+
+.stars::before,
+.stars::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    background: var(--gold-light);
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        7vw 12vh 0 0 rgba(224,202,145,.8),
+        15vw 28vh 0 0 rgba(224,202,145,.5),
+        24vw 8vh 0 0 rgba(224,202,145,.7),
+        31vw 22vh 0 0 rgba(224,202,145,.4),
+        40vw 14vh 0 0 rgba(224,202,145,.8),
+        49vw 27vh 0 0 rgba(224,202,145,.6),
+        58vw 10vh 0 0 rgba(224,202,145,.5),
+        67vw 24vh 0 0 rgba(224,202,145,.8),
+        76vw 13vh 0 0 rgba(224,202,145,.5),
+        86vw 30vh 0 0 rgba(224,202,145,.7),
+        94vw 11vh 0 0 rgba(224,202,145,.6),
+
+        11vw 48vh 0 0 rgba(224,202,145,.5),
+        22vw 39vh 0 0 rgba(224,202,145,.7),
+        35vw 52vh 0 0 rgba(224,202,145,.4),
+        62vw 45vh 0 0 rgba(224,202,145,.6),
+        73vw 52vh 0 0 rgba(224,202,145,.5),
+        88vw 43vh 0 0 rgba(224,202,145,.8);
+
+    animation: twinkle 5s infinite alternate;
 
 }
 
 
-.stars-one {
+.stars::after {
 
-    background-image:
-        radial-gradient(circle, #e0ca91 1px, transparent 1px);
+    width: 2px;
+    height: 2px;
 
-    background-size: 140px 140px;
+    opacity: 0.6;
 
-}
-
-
-.stars-two {
-
-    background-image:
-        radial-gradient(circle, #eee5d2 1px, transparent 1px);
-
-    background-size: 220px 220px;
-
-    background-position:
-        70px 40px;
-
-    opacity: .35;
+    animation-delay: 2s;
 
 }
 
 
-.stars-three {
+@keyframes twinkle {
 
-    background-image:
-        radial-gradient(circle, #c8ad72 1px, transparent 1px);
+    from {
+        opacity: 0.35;
+    }
 
-    background-size: 300px 300px;
-
-    background-position:
-        150px 100px;
-
-    opacity: .25;
+    to {
+        opacity: 1;
+    }
 
 }
 
@@ -300,46 +291,121 @@ body::after {
 
     position: absolute;
 
-    display: flex;
-
-    gap: 35px;
+    opacity: 0.5;
 
 }
 
 
 .constellation span {
 
-    width: 4px;
-    height: 4px;
+    display: block;
 
-    border-radius: 50%;
+    position: absolute;
+
+    width: 5px;
+
+    height: 5px;
 
     background: var(--gold-light);
 
-    box-shadow:
-        0 0 8px rgba(224,202,145,.6);
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px rgba(224,202,145,.7);
 
 }
 
 
 .constellation-one {
 
-    top: 25%;
-    left: 12%;
+    top: 22%;
+    left: 15%;
 
-    transform:
-        rotate(-20deg);
+    width: 170px;
+    height: 120px;
+
+}
+
+
+.constellation-one span:nth-child(1) {
+    left: 0;
+    top: 60px;
+}
+
+.constellation-one span:nth-child(2) {
+    left: 55px;
+    top: 5px;
+}
+
+.constellation-one span:nth-child(3) {
+    left: 115px;
+    top: 45px;
+}
+
+.constellation-one span:nth-child(4) {
+    left: 165px;
+    top: 0;
+}
+
+
+.constellation-one::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: 0;
+
+    width: 165px;
+    height: 70px;
+
+    border-top: 1px solid rgba(200,173,114,.3);
+
+    transform: rotate(18deg);
 
 }
 
 
 .constellation-two {
 
-    top: 20%;
-    right: 15%;
+    top: 24%;
+    right: 13%;
 
-    transform:
-        rotate(30deg);
+    width: 170px;
+    height: 120px;
+
+}
+
+
+.constellation-two span:nth-child(1) {
+    left: 0;
+    top: 30px;
+}
+
+.constellation-two span:nth-child(2) {
+    left: 70px;
+    top: 80px;
+}
+
+.constellation-two span:nth-child(3) {
+    left: 145px;
+    top: 0;
+}
+
+
+.constellation-two::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+
+    height: 100px;
+
+    border-bottom: 1px solid rgba(200,173,114,.3);
+
+    transform: rotate(-15deg);
 
 }
 
@@ -352,18 +418,22 @@ body::after {
 
     position: absolute;
 
-    top: 15%;
-    right: 18%;
+    top: 125px;
 
-    width: 110px;
-    height: 110px;
+    left: 50%;
+
+    width: 105px;
+
+    height: 105px;
+
+    transform: translateX(-50%);
 
     border-radius: 50%;
 
     background: var(--gold-light);
 
     box-shadow:
-        0 0 40px rgba(224,202,145,.25);
+        0 0 35px rgba(224,202,145,.25);
 
 }
 
@@ -375,14 +445,16 @@ body::after {
     position: absolute;
 
     top: -8px;
-    left: 25px;
 
-    width: 110px;
-    height: 110px;
+    left: 27px;
+
+    width: 105px;
+
+    height: 105px;
 
     border-radius: 50%;
 
-    background: #16271f;
+    background: #0b1512;
 
 }
 
@@ -395,21 +467,16 @@ body::after {
 
     position: relative;
 
-    z-index: 5;
+    z-index: 10;
 
-    text-align: center;
-
-    max-width: 850px;
-
-    padding:
-        120px 30px 180px;
+    margin-top: 40px;
 
 }
 
 
 .eyebrow {
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     color: var(--gold);
 
@@ -417,27 +484,31 @@ body::after {
         "Montserrat",
         sans-serif;
 
-    font-size: .65rem;
+    font-size: 0.7rem;
 
-    letter-spacing: .3em;
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
 
 }
 
 
 .hero h1 {
 
+    margin: 0;
+
     color: var(--cream);
 
-    font-size:
-        clamp(
-            4rem,
-            9vw,
-            8rem
-        );
+    font-size: clamp(4rem, 9vw, 8rem);
 
-    font-weight: 300;
+    font-weight: 400;
 
-    line-height: .85;
+    line-height: 0.85;
+
+    letter-spacing: 0.03em;
+
+    text-shadow:
+        0 4px 30px rgba(0,0,0,.5);
 
 }
 
@@ -446,35 +517,45 @@ body::after {
 
     display: block;
 
-    font-size: .55em;
+    font-size: 0.52em;
 
-    font-style: italic;
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 14px;
 
 }
 
 
 .ornament {
 
-    margin: 35px 0;
+    margin: 30px 0;
 
     color: var(--gold);
 
-    font-size: .8rem;
+    font-size: 0.9rem;
 
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
 
 }
 
 
 .hero-subtitle {
 
-    color: var(--text-muted);
+    color: var(--parchment);
 
-    font-size: 1.15rem;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    line-height: 1.7;
+    font-size: 1.35rem;
 
-    letter-spacing: .04em;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.04em;
 
 }
 
@@ -485,9 +566,11 @@ body::after {
 
     flex-direction: column;
 
-    gap: 10px;
+    align-items: center;
 
-    margin-top: 40px;
+    gap: 12px;
+
+    margin-top: 35px;
 
     color: var(--gold-light);
 
@@ -497,9 +580,9 @@ body::after {
         "Montserrat",
         sans-serif;
 
-    font-size: .6rem;
+    font-size: 0.7rem;
 
-    letter-spacing: .2em;
+    letter-spacing: 0.25em;
 
     text-transform: uppercase;
 
@@ -508,7 +591,16 @@ body::after {
 
 .explore-link span {
 
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.explore-link:hover span {
+
+    transform: translateY(6px);
 
 }
 
@@ -521,29 +613,39 @@ body::after {
 
     position: absolute;
 
-    bottom: 0;
+    bottom: 120px;
 
     left: 0;
 
     width: 100%;
 
-    height: 220px;
+    height: 240px;
 
     background:
 
         linear-gradient(
             135deg,
             transparent 50%,
-            #16271f 50%
-        )
-        0 100% / 55% 100% no-repeat,
+            #16241f 50%
+        );
 
-        linear-gradient(
-            225deg,
-            transparent 50%,
-            #16271f 50%
-        )
-        100% 100% / 55% 100% no-repeat;
+    clip-path:
+        polygon(
+            0 70%,
+            10% 48%,
+            20% 65%,
+            31% 35%,
+            42% 63%,
+            54% 28%,
+            65% 65%,
+            77% 40%,
+            88% 58%,
+            100% 30%,
+            100% 100%,
+            0 100%
+        );
+
+    opacity: 0.9;
 
 }
 
@@ -562,18 +664,47 @@ body::after {
 
     width: 100%;
 
-    height: 100px;
+    height: 150px;
 
-    background:
+    background: #07100d;
 
-        linear-gradient(
-            135deg,
-            #09110f 25%,
-            transparent 25%
-        )
-        0 100% / 60px 100px repeat-x;
-
-    opacity: .95;
+    clip-path:
+        polygon(
+            0 45%,
+            3% 20%,
+            5% 48%,
+            8% 15%,
+            10% 45%,
+            13% 22%,
+            15% 50%,
+            18% 10%,
+            20% 47%,
+            24% 18%,
+            27% 50%,
+            30% 12%,
+            33% 47%,
+            36% 22%,
+            39% 48%,
+            43% 10%,
+            46% 50%,
+            50% 15%,
+            53% 50%,
+            57% 8%,
+            60% 50%,
+            64% 20%,
+            67% 48%,
+            71% 12%,
+            74% 50%,
+            78% 17%,
+            81% 48%,
+            85% 8%,
+            88% 50%,
+            92% 20%,
+            96% 48%,
+            100% 10%,
+            100% 100%,
+            0 100%
+        );
 
 }
 
@@ -584,31 +715,32 @@ body::after {
 
 .introduction {
 
-    padding:
-        150px 10%;
+    padding: 130px 25px 120px;
 
     text-align: center;
 
     background:
-        #101b18;
+        linear-gradient(
+            to bottom,
+            #07100d,
+            #101b18
+        );
 
 }
 
 
 .section-ornament {
 
-    margin-bottom: 25px;
-
     color: var(--gold);
 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+
+    margin-bottom: 25px;
 
 }
 
 
 .intro-small {
-
-    margin-bottom: 30px;
 
     color: var(--gold);
 
@@ -616,34 +748,31 @@ body::after {
         "Montserrat",
         sans-serif;
 
-    font-size: .6rem;
+    font-size: 0.65rem;
 
-    letter-spacing: .25em;
+    letter-spacing: 0.3em;
 
 }
 
 
 .introduction h2 {
 
+    max-width: 700px;
+
+    margin: 25px auto;
+
     color: var(--cream);
 
-    font-size:
-        clamp(
-            2.2rem,
-            5vw,
-            4rem
-        );
+    font-size: clamp(2rem, 4vw, 3.2rem);
 
-    font-weight: 300;
+    font-weight: 400;
 
-    line-height: 1.15;
+    line-height: 1.2;
 
 }
 
 
 .intro-script {
-
-    margin-top: 30px;
 
     color: var(--gold-light);
 
@@ -657,71 +786,59 @@ body::after {
 
 
 /* ==================================================
-   WORLDS
+   WORLDS SECTION
    ================================================== */
 
 .worlds-section {
 
-    padding:
-        120px 5% 140px;
+    padding: 100px 5% 140px;
 
     background:
-        #0d1814;
+        radial-gradient(
+            circle at center,
+            #24382f,
+            #101b18 60%
+        );
 
 }
 
 
 .section-heading {
 
-    margin-bottom: 70px;
-
     text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.section-heading .eyebrow {
+
+    margin-bottom: 8px;
 
 }
 
 
 .section-heading h2 {
 
+    margin: 0;
+
     color: var(--cream);
 
-    font-size:
-        clamp(
-            2.5rem,
-            5vw,
-            4rem
-        );
+    font-size: clamp(2.5rem, 5vw, 4rem);
 
-    font-weight: 300;
+    font-weight: 400;
 
 }
 
 
 .heading-line {
 
-    margin-top: 25px;
+    margin-top: 20px;
 
     color: var(--gold);
 
-    font-size: .8rem;
-
-}
-
-
-.world-grid {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
-
-    gap: 25px;
+    letter-spacing: 0.5em;
 
 }
 
@@ -730,98 +847,125 @@ body::after {
    WORLD CARDS
    ================================================== */
 
+.world-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 18px;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+}
+
+
 .world-card {
 
-    position: relative;
+    min-height: 350px;
 
-    min-height: 250px;
-
-    padding: 40px 30px;
+    padding: 35px 18px 25px;
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
+    justify-content: space-between;
 
-    justify-content: center;
+    align-items: center;
 
     text-align: center;
 
+    text-decoration: none;
+
+    color: var(--cream);
+
     background:
+
         linear-gradient(
             145deg,
-            #1c3029,
-            #0f1c17
+            rgba(38,58,48,.95),
+            rgba(12,22,18,.95)
         );
 
     border:
-        1px solid rgba(200,173,114,.2);
 
-    text-decoration: none;
+        1px solid rgba(200,173,114,.35);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.3);
 
     transition:
-        transform .35s ease,
-        border-color .35s ease;
+
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
 
 }
 
 
 .world-card:hover {
 
-    transform:
-        translateY(-8px);
+    transform: translateY(-10px);
 
-    border-color:
-        rgba(200,173,114,.55);
+    border-color: var(--gold);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.5),
+        0 0 25px rgba(200,173,114,.08);
 
 }
 
 
 .card-icon {
 
-    margin-bottom: 20px;
-
     font-size: 1.8rem;
+
+    filter: grayscale(30%);
 
 }
 
 
 .world-card h3 {
 
-    color: var(--cream);
+    margin: 10px 0;
 
-    font-size: 2rem;
+    color: var(--gold-light);
+
+    font-size: 1.7rem;
 
     font-weight: 400;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
 
 }
 
 
 .world-card p {
 
-    margin-top: 12px;
+    margin: 0;
 
     color: var(--text-muted);
 
-    font-family:
-        "Montserrat",
-        sans-serif;
+    font-size: 1.05rem;
 
-    font-size: .65rem;
-
-    line-height: 1.7;
-
-    letter-spacing: .08em;
+    line-height: 1.4;
 
 }
 
 
 .card-arrow {
 
-    margin-top: 20px;
-
     color: var(--gold);
+
+    font-size: 1.3rem;
 
 }
 
@@ -832,56 +976,59 @@ body::after {
 
 .currently-section {
 
-    padding:
-        120px 5%;
+    padding: 100px 5% 120px;
 
-    background:
-        #15251f;
+    background: #0b1512;
 
 }
 
 
 .tiny-moon {
 
-    margin-bottom: 20px;
-
     color: var(--gold-light);
 
-    font-size: 1.5rem;
+    font-size: 2rem;
+
+    margin-bottom: 10px;
 
 }
 
 
 .currently-grid {
 
-    max-width: 1000px;
-
-    margin: auto;
-
     display: grid;
 
     grid-template-columns:
-        repeat(
-            4,
-            1fr
-        );
+        repeat(4, 1fr);
 
-    gap: 20px;
+    max-width: 1100px;
+
+    margin: auto;
+
+    border-top:
+        1px solid rgba(200,173,114,.25);
+
+    border-bottom:
+        1px solid rgba(200,173,114,.25);
 
 }
 
 
 .currently-card {
 
-    padding: 35px 20px;
+    padding: 40px 25px;
 
     text-align: center;
 
-    border-top:
-        1px solid rgba(200,173,114,.3);
+    border-right:
+        1px solid rgba(200,173,114,.2);
 
-    border-bottom:
-        1px solid rgba(200,173,114,.15);
+}
+
+
+.currently-card:last-child {
+
+    border-right: none;
 
 }
 
@@ -895,17 +1042,15 @@ body::after {
 
 .currently-label {
 
-    margin-top: 15px;
-
     color: var(--gold);
 
     font-family:
         "Montserrat",
         sans-serif;
 
-    font-size: .55rem;
+    font-size: 0.65rem;
 
-    letter-spacing: .18em;
+    letter-spacing: 0.2em;
 
     text-transform: uppercase;
 
@@ -914,25 +1059,294 @@ body::after {
 
 .currently-content {
 
-    margin-top: 10px;
-
     color: var(--cream);
 
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+
+    font-style: italic;
 
 }
 
 
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.site-footer {
+
+    padding: 80px 25px;
+
+    text-align: center;
+
+    background: #07100d;
+
+}
+
+
+.footer-ornament {
+
+    color: var(--gold);
+
+    font-size: 1.5rem;
+
+}
+
+
+.footer-script {
+
+    margin: 20px 0;
+
+    color: var(--gold-light);
+
+    font-family:
+        "Parisienne",
+        cursive;
+
+    font-size: 2rem;
+
+    line-height: 1.4;
+
+}
+
+
+.footer-small {
+
+    margin-top: 40px;
+
+    color: var(--text-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 1000px) {
+
+    .navigation {
+
+        gap: 20px;
+
+    }
+
+
+    .nav-link {
+
+        font-size: 0.8rem;
+
+    }
+
+
+    .world-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    .site-header {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .navigation {
+
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .nav-link {
+
+        font-size: 0.65rem;
+
+        letter-spacing: 0.1em;
+
+    }
+
+
+    .hero {
+
+        min-height: 750px;
+
+    }
+
+
+    .moon {
+
+        top: 110px;
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+
+    .moon::after {
+
+        width: 75px;
+
+        height: 75px;
+
+        left: 20px;
+
+    }
+
+
+    .hero-content {
+
+        padding: 0 20px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 4rem;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .constellation {
+
+        display: none;
+
+    }
+
+
+    .world-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .world-card {
+
+        min-height: 280px;
+
+        padding: 25px 12px;
+
+    }
+
+
+    .world-card h3 {
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .world-card p {
+
+        font-size: .9rem;
+
+    }
+
+
+    .currently-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .currently-card:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+
+    .currently-card:nth-child(1),
+    .currently-card:nth-child(2) {
+
+        border-bottom:
+            1px solid rgba(200,173,114,.2);
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+   ================================================== */
+
+@media (max-width: 450px) {
+
+    .world-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .currently-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .currently-card {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(200,173,114,.2);
+
+    }
+
+
+    .currently-card:last-child {
+
+        border-bottom: none;
+
+    }
+
+}
 /* ==================================================
    LITTLE THOUGHTS / TWEETS
    ================================================== */
 
 .thoughts-section {
 
-    position: relative;
-
-    padding:
-        120px 5% 130px;
+    padding: 120px 5% 130px;
 
     background:
         radial-gradient(
@@ -940,30 +1354,6 @@ body::after {
             #1a2b24,
             #0b1512 65%
         );
-
-}
-
-
-/* Small celestial accent at the top */
-
-.thoughts-section::before {
-
-    content:
-        "✦  ─────  ✧  ─────  ✦";
-
-    display: block;
-
-    margin-bottom: 45px;
-
-    color: var(--gold);
-
-    font-size: .75rem;
-
-    letter-spacing: .15em;
-
-    text-align: center;
-
-    opacity: .75;
 
 }
 
@@ -991,8 +1381,7 @@ body::after {
 
     position: relative;
 
-    padding:
-        30px 35px 24px;
+    padding: 30px 35px 24px;
 
     background:
         linear-gradient(
@@ -1019,8 +1408,7 @@ body::after {
 
 .tweet-card:hover {
 
-    transform:
-        translateY(-5px);
+    transform: translateY(-5px);
 
     border-color:
         rgba(200,173,114,.65);
@@ -1049,11 +1437,13 @@ body::after {
 .tweet-avatar {
 
     width: 45px;
+
     height: 45px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     flex-shrink: 0;
@@ -1107,9 +1497,9 @@ body::after {
         "Montserrat",
         sans-serif;
 
-    font-size: .58rem;
+    font-size: 0.58rem;
 
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
 
 }
 
@@ -1132,7 +1522,9 @@ body::after {
 .tweet-text {
 
     margin:
+
         28px 10px
+
         30px 10px;
 
     color: var(--cream);
@@ -1143,7 +1535,7 @@ body::after {
 
     line-height: 1.45;
 
-    letter-spacing: .02em;
+    letter-spacing: 0.02em;
 
 }
 
@@ -1171,7 +1563,7 @@ body::after {
         "Montserrat",
         sans-serif;
 
-    font-size: .75rem;
+    font-size: 0.75rem;
 
 }
 
@@ -1193,194 +1585,27 @@ body::after {
         "Cormorant Garamond",
         serif;
 
-    font-size: .95rem;
+    font-size: 0.95rem;
 
 }
 
 
 /* ==================================================
-   FOOTER
-   ================================================== */
-
-.site-footer {
-
-    padding:
-        100px 20px 70px;
-
-    text-align: center;
-
-    background:
-        #09110f;
-
-}
-
-
-.footer-ornament {
-
-    margin-bottom: 25px;
-
-    color: var(--gold);
-
-}
-
-
-.footer-script {
-
-    color: var(--gold-light);
-
-    font-family:
-        "Parisienne",
-        cursive;
-
-    font-size: 2rem;
-
-    line-height: 1.5;
-
-}
-
-
-.footer-small {
-
-    margin-top: 25px;
-
-    color: var(--text-muted);
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: .55rem;
-
-    letter-spacing: .2em;
-
-}
-
-
-/* ==================================================
-   TABLET
-   ================================================== */
-
-@media (max-width: 1000px) {
-
-    .world-grid {
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-
-    .currently-grid {
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-
-    .navigation {
-
-        gap: 25px;
-
-    }
-
-}
-
-
-/* ==================================================
-   MOBILE
+   MOBILE TWEETS
    ================================================== */
 
 @media (max-width: 700px) {
 
-    .site-header {
-
-        padding:
-            20px 15px;
-
-    }
-
-
-    .navigation {
-
-        gap: 15px;
-
-        flex-wrap: wrap;
-
-    }
-
-
-    .nav-link {
-
-        font-size: .5rem;
-
-    }
-
-
-    .hero-content {
-
-        padding:
-            120px 20px 160px;
-
-    }
-
-
-    .world-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .currently-grid {
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-
-    .introduction {
-
-        padding:
-            100px 25px;
-
-    }
-
-
-    /* Global edge accents */
-
-    body::before {
-        left: 9px;
-    }
-
-
-    body::after {
-        right: 9px;
-    }
-
-
-    /* Tweet section */
-
     .thoughts-section {
 
-        padding:
-            90px 20px 100px;
+        padding: 90px 20px 100px;
 
     }
 
 
     .tweet-card {
 
-        padding:
-            25px 22px 20px;
+        padding: 25px 22px 20px;
 
     }
 
@@ -1388,7 +1613,9 @@ body::after {
     .tweet-text {
 
         margin:
+
             24px 4px
+
             26px 4px;
 
         font-size: 1.3rem;
@@ -1399,41 +1626,9 @@ body::after {
     .tweet-avatar {
 
         width: 40px;
+
         height: 40px;
 
     }
 
 }
-
-
-/* ==================================================
-   SMALL PHONES
-   ================================================== */
-
-@media (max-width: 450px) {
-
-    .currently-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            3.5rem;
-
-    }
-
-
-    .footer-script {
-
-        font-size:
-            1.6rem;
-
-    }
-
-}
-```
