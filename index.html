@@ -1,368 +1,437 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Little Universe</title>
+```
+<title>My Little Universe</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <!-- Elegant serif fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Elegant serif fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+```
+
 </head>
 
 <body>
 
-    <!-- =========================================
-         NAVIGATION
-         ========================================= -->
+```
+<!-- =========================================
+     NAVIGATION
+     ========================================= -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <nav class="navigation">
+    <nav class="navigation">
 
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#library" class="nav-link">Library</a>
-            <a href="#worlds" class="nav-link">Worlds</a>
-            <a href="#studio" class="nav-link">Studio</a>
-            <a href="#wilds" class="nav-link">Wilds</a>
-            <a href="#archives" class="nav-link">Archives</a>
-            <a href="#journal" class="nav-link">Journal</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#library" class="nav-link">Library</a>
+        <a href="#worlds" class="nav-link">Worlds</a>
+        <a href="#studio" class="nav-link">Studio</a>
+        <a href="#wilds" class="nav-link">Wilds</a>
+        <a href="#archives" class="nav-link">Archives</a>
+        <a href="#journal" class="nav-link">Journal</a>
 
-        </nav>
+    </nav>
 
-    </header>
+</header>
 
 
-    <!-- =========================================
-         HERO / ENTRANCE
-         ========================================= -->
+<!-- =========================================
+     HERO / ENTRANCE
+     ========================================= -->
 
-    <main>
+<main>
 
-        <section id="home" class="hero">
+    <section id="home" class="hero">
 
-            <!-- Celestial decoration -->
+        <div class="stars stars-one"></div>
+        <div class="stars stars-two"></div>
+        <div class="stars stars-three"></div>
 
-            <div class="stars stars-one"></div>
-            <div class="stars stars-two"></div>
-            <div class="stars stars-three"></div>
+        <div class="constellation constellation-one">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-            <div class="constellation constellation-one">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="constellation constellation-two">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="moon"></div>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">WELCOME, WANDERER</p>
+
+            <h1>
+                <span>My Little</span>
+                Universe
+            </h1>
+
+            <div class="ornament">
+                ✦ ───── ✧ ───── ✦
             </div>
 
-            <div class="constellation constellation-two">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <p class="hero-subtitle">
+                a little nook for the things I love,<br>
+                create, discover, and dream about
+            </p>
+
+            <a href="#explore" class="explore-link">
+                Explore my universe
+                <span>↓</span>
+            </a>
+
+        </div>
+
+        <div class="mountains"></div>
+        <div class="forest"></div>
+
+    </section>
 
 
-            <!-- Crescent Moon -->
+    <!-- =========================================
+         INTRODUCTION
+         ========================================= -->
 
-            <div class="moon"></div>
+    <section class="introduction">
+
+        <div class="section-ornament">✦</div>
+
+        <p class="intro-small">
+            A COLLECTION OF LITTLE THINGS
+        </p>
+
+        <h2>
+            Every story, every dream,<br>
+            every little piece of magic<br>
+            belongs somewhere.
+        </h2>
+
+        <p class="intro-script">
+            This is that somewhere.
+        </p>
+
+    </section>
 
 
-            <!-- Main Title -->
+    <!-- =========================================
+         WORLDS / MAIN SPACES
+         ========================================= -->
 
-            <div class="hero-content">
+    <section id="explore" class="worlds-section">
 
-                <p class="eyebrow">WELCOME, WANDERER</p>
+        <div class="section-heading">
 
-                <h1>
-                    <span>My Little</span>
-                    Universe
-                </h1>
+            <p class="eyebrow">STEP INSIDE</p>
 
-                <div class="ornament">
-                    ✦ ───── ✧ ───── ✦
-                </div>
+            <h2>Explore My Worlds</h2>
 
-                <p class="hero-subtitle">
-                    a little nook for the things I love,<br>
-                    create, discover, and dream about
+            <div class="heading-line">✦</div>
+
+        </div>
+
+
+        <div class="world-grid">
+
+            <a href="#library" class="world-card">
+
+                <div class="card-icon">📖</div>
+
+                <h3>Library</h3>
+
+                <p>
+                    books, stories<br>
+                    & everything in between
                 </p>
 
-                <a href="#explore" class="explore-link">
-                    Explore my universe
-                    <span>↓</span>
-                </a>
+                <span class="card-arrow">↓</span>
+
+            </a>
+
+
+            <a href="#worlds" class="world-card">
+
+                <div class="card-icon">⚔</div>
+
+                <h3>Worlds</h3>
+
+                <p>
+                    fiction, fandoms<br>
+                    & characters I love
+                </p>
+
+                <span class="card-arrow">↓</span>
+
+            </a>
+
+
+            <a href="#studio" class="world-card">
+
+                <div class="card-icon">✎</div>
+
+                <h3>Studio</h3>
+
+                <p>
+                    art, creativity<br>
+                    & things I make
+                </p>
+
+                <span class="card-arrow">↓</span>
+
+            </a>
+
+
+            <a href="#wilds" class="world-card">
+
+                <div class="card-icon">🌿</div>
+
+                <h3>Wilds</h3>
+
+                <p>
+                    nature, animals,<br>
+                    plants & the stars
+                </p>
+
+                <span class="card-arrow">↓</span>
+
+            </a>
+
+
+            <a href="#archives" class="world-card">
+
+                <div class="card-icon">✧</div>
+
+                <h3>Archives</h3>
+
+                <p>
+                    mythology, symbols<br>
+                    & old stories
+                </p>
+
+                <span class="card-arrow">↓</span>
+
+            </a>
+
+
+            <a href="#journal" class="world-card">
+
+                <div class="card-icon">✒</div>
+
+                <h3>Journal</h3>
+
+                <p>
+                    thoughts, reflections<br>
+                    & little notes
+                </p>
+
+                <span class="card-arrow">↓</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CURRENTLY
+         ========================================= -->
+
+    <section class="currently-section">
+
+        <div class="section-heading">
+
+            <div class="tiny-moon">☾</div>
+
+            <h2>Currently...</h2>
+
+            <div class="heading-line">✦</div>
+
+        </div>
+
+
+        <div class="currently-grid">
+
+            <div class="currently-card">
+
+                <span class="currently-icon">📖</span>
+
+                <p class="currently-label">Reading</p>
+
+                <p class="currently-content">
+                    something magical
+                </p>
 
             </div>
 
 
-            <!-- Mountains -->
+            <div class="currently-card">
 
-            <div class="mountains"></div>
+                <span class="currently-icon">🎬</span>
 
-            <!-- Forest -->
+                <p class="currently-label">Watching</p>
 
-            <div class="forest"></div>
-
-        </section>
-
-
-        <!-- =========================================
-             INTRODUCTION
-             ========================================= -->
-
-        <section class="introduction">
-
-            <div class="section-ornament">✦</div>
-
-            <p class="intro-small">
-                A COLLECTION OF LITTLE THINGS
-            </p>
-
-            <h2>
-                Every story, every dream,<br>
-                every little piece of magic<br>
-                belongs somewhere.
-            </h2>
-
-            <p class="intro-script">
-                This is that somewhere.
-            </p>
-
-        </section>
-
-
-        <!-- =========================================
-             WORLDS / MAIN SPACES
-             ========================================= -->
-
-        <section id="explore" class="worlds-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">STEP INSIDE</p>
-
-                <h2>Explore My Worlds</h2>
-
-                <div class="heading-line">✦</div>
+                <p class="currently-content">
+                    something I can't stop watching
+                </p>
 
             </div>
 
 
-            <div class="world-grid">
+            <div class="currently-card">
 
+                <span class="currently-icon">🎧</span>
 
-                <!-- LIBRARY -->
+                <p class="currently-label">Listening To</p>
 
-                <a href="#library" class="world-card">
-
-                    <div class="card-icon">📖</div>
-
-                    <h3>Library</h3>
-
-                    <p>
-                        books, stories<br>
-                        & everything in between
-                    </p>
-
-                    <span class="card-arrow">↓</span>
-
-                </a>
-
-
-                <!-- WORLDS -->
-
-                <a href="#worlds" class="world-card">
-
-                    <div class="card-icon">⚔</div>
-
-                    <h3>Worlds</h3>
-
-                    <p>
-                        fiction, fandoms<br>
-                        & characters I love
-                    </p>
-
-                    <span class="card-arrow">↓</span>
-
-                </a>
-
-
-                <!-- STUDIO -->
-
-                <a href="#studio" class="world-card">
-
-                    <div class="card-icon">✎</div>
-
-                    <h3>Studio</h3>
-
-                    <p>
-                        art, creativity<br>
-                        & things I make
-                    </p>
-
-                    <span class="card-arrow">↓</span>
-
-                </a>
-
-
-                <!-- WILDS -->
-
-                <a href="#wilds" class="world-card">
-
-                    <div class="card-icon">🌿</div>
-
-                    <h3>Wilds</h3>
-
-                    <p>
-                        nature, animals,<br>
-                        plants & the stars
-                    </p>
-
-                    <span class="card-arrow">↓</span>
-
-                </a>
-
-
-                <!-- ARCHIVES -->
-
-                <a href="#archives" class="world-card">
-
-                    <div class="card-icon">✧</div>
-
-                    <h3>Archives</h3>
-
-                    <p>
-                        mythology, symbols<br>
-                        & old stories
-                    </p>
-
-                    <span class="card-arrow">↓</span>
-
-                </a>
-
-
-                <!-- JOURNAL -->
-
-                <a href="#journal" class="world-card">
-
-                    <div class="card-icon">✒</div>
-
-                    <h3>Journal</h3>
-
-                    <p>
-                        thoughts, reflections<br>
-                        & little notes
-                    </p>
-
-                    <span class="card-arrow">↓</span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             CURRENTLY
-             ========================================= -->
-
-        <section class="currently-section">
-
-            <div class="section-heading">
-
-                <div class="tiny-moon">☾</div>
-
-                <h2>Currently...</h2>
-
-                <div class="heading-line">✦</div>
+                <p class="currently-content">
+                    something on repeat
+                </p>
 
             </div>
 
 
-            <div class="currently-grid">
+            <div class="currently-card">
+
+                <span class="currently-icon">🎨</span>
+
+                <p class="currently-label">Creating</p>
+
+                <p class="currently-content">
+                    something with my hands
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                <div class="currently-card">
+    <!-- =========================================
+         WORDS THAT STAYED
+         ========================================= -->
 
-                    <span class="currently-icon">📖</span>
+    <section class="words-section">
 
-                    <p class="currently-label">Reading</p>
+        <div class="section-heading">
 
-                    <p class="currently-content">
-                        something magical
-                    </p>
+            <p class="eyebrow">A FEW WORDS</p>
+
+            <h2>Words That Stayed</h2>
+
+            <div class="heading-line">✦</div>
+
+        </div>
+
+
+        <div class="quote-grid">
+
+
+            <!-- AELIN / SARAH J. MAAS -->
+
+            <article class="quote-card">
+
+                <div class="quote-top">
+
+                    <span class="quote-symbol">✧</span>
+
+                    <span class="quote-label">
+                        FROM THE BOOKSHELF
+                    </span>
 
                 </div>
 
+                <blockquote>
+                    “You could rattle the stars,
+                    you could do anything,
+                    if only you dared.”
+                </blockquote>
 
-                <div class="currently-card">
+                <div class="quote-divider">✦</div>
 
-                    <span class="currently-icon">🎬</span>
+                <p class="quote-author">
+                    — Sarah J. Maas
+                </p>
 
-                    <p class="currently-label">Watching</p>
+                <p class="quote-character">
+                    Aelin Galathynius
+                </p>
 
-                    <p class="currently-content">
-                        something I can't stop watching
-                    </p>
-
-                </div>
-
-
-                <div class="currently-card">
-
-                    <span class="currently-icon">🎧</span>
-
-                    <p class="currently-label">Listening To</p>
-
-                    <p class="currently-content">
-                        something on repeat
-                    </p>
-
-                </div>
+            </article>
 
 
-                <div class="currently-card">
+            <!-- ONE PIECE / LUFFY -->
 
-                    <span class="currently-icon">🎨</span>
+            <article class="quote-card">
 
-                    <p class="currently-label">Creating</p>
+                <div class="quote-top">
 
-                    <p class="currently-content">
-                        something with my hands
-                    </p>
+                    <span class="quote-symbol">⚔</span>
+
+                    <span class="quote-label">
+                        FROM ANOTHER WORLD
+                    </span>
 
                 </div>
 
-            </div>
+                <blockquote>
+                    “It’s not about if I can.
+                    I’m doing this because
+                    I want to.”
+                </blockquote>
 
-        </section>
+                <div class="quote-divider">✦</div>
+
+                <p class="quote-author">
+                    — Monkey D. Luffy
+                </p>
+
+                <p class="quote-character">
+                    One Piece
+                </p>
+
+            </article>
 
 
-        <!-- =========================================
-             FOOTER
-             ========================================= -->
+        </div>
 
-        <footer class="site-footer">
+    </section>
 
-            <div class="footer-ornament">✦</div>
 
-            <p class="footer-script">
-                to the stars who listen<br>
-                and the dreams that are answered
-            </p>
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
 
-            <p class="footer-small">
-                ✦ my little universe ✦
-            </p>
+    <footer class="site-footer">
 
-        </footer>
+        <div class="footer-ornament">✦</div>
 
-    </main>
+        <p class="footer-script">
+            to the stars who listen<br>
+            and the dreams that are answered
+        </p>
+
+        <p class="footer-small">
+            ✦ my little universe ✦
+        </p>
+
+    </footer>
+
+</main>
+```
 
 </body>
 </html>
