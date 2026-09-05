@@ -1,0 +1,1086 @@
+/* ==================================================
+   MY LITTLE UNIVERSE
+   THE LIBRARY
+   ================================================== */
+
+
+/* ==================================================
+   ROOT
+   ================================================== */
+
+:root {
+
+    --library-night: #111814;
+    --library-deep: #080e0c;
+
+    --library-green: #24382f;
+    --library-green-light: #385044;
+
+    --library-gold: #c8ad72;
+    --library-gold-light: #e0ca91;
+
+    --library-cream: #eee5d2;
+    --library-parchment: #d9ccb2;
+
+    --library-muted: #aaa28f;
+
+    --library-shadow:
+        rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* ==================================================
+   RESET
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #263a30 0%,
+            var(--library-night) 45%,
+            var(--library-deep) 100%
+        );
+
+    color: var(--library-cream);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* ==================================================
+   NAVIGATION
+   ================================================== */
+
+.library-header {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 50;
+
+    padding: 25px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.back-home {
+
+    color: var(--library-gold-light);
+
+    text-decoration: none;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+}
+
+
+.library-navigation {
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+
+.library-navigation a {
+
+    color: var(--library-cream);
+
+    text-decoration: none;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease;
+
+}
+
+
+.library-navigation a:hover {
+
+    color: var(--library-gold-light);
+
+}
+
+
+/* ==================================================
+   HERO
+   ================================================== */
+
+.library-hero {
+
+    position: relative;
+
+    min-height: 700px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(61, 83, 68, 0.45),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #09100d,
+            #18271f 65%,
+            #0a110e
+        );
+
+}
+
+
+/* ==================================================
+   STARS
+   ================================================== */
+
+.library-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.7;
+
+}
+
+
+.library-stars::before {
+
+    content: "✦     ·        ✧          ·     ✦          ·       ✧      ·       ✦";
+
+    position: absolute;
+
+    top: 20%;
+
+    left: 50%;
+
+    width: 100%;
+
+    transform: translateX(-50%);
+
+    color: var(--library-gold-light);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2rem;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==================================================
+   HERO CONTENT
+   ================================================== */
+
+.library-hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 50px;
+
+}
+
+
+.library-eyebrow {
+
+    color: var(--library-gold);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
+
+}
+
+
+.library-hero h1 {
+
+    margin: 20px 0 10px;
+
+    color: var(--library-cream);
+
+    font-size:
+        clamp(4rem, 8vw, 7rem);
+
+    font-weight: 400;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+.library-ornament {
+
+    margin: 25px 0;
+
+    color: var(--library-gold);
+
+    font-size: 0.85rem;
+
+}
+
+
+.library-subtitle {
+
+    color: var(--library-parchment);
+
+    font-size: 1.35rem;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+}
+
+
+.library-enter {
+
+    display: inline-flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    color: var(--library-gold-light);
+
+    text-decoration: none;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+
+}
+
+
+.library-enter span {
+
+    font-size: 1.2rem;
+
+}
+
+
+/* ==================================================
+   BOOKSHELF DECORATION
+   ================================================== */
+
+.library-bookshelf-decoration {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 115px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding-bottom: 20px;
+
+    background:
+        linear-gradient(
+            to top,
+            #070d0b,
+            transparent
+        );
+
+}
+
+
+.library-bookshelf-decoration span {
+
+    display: block;
+
+    width: 32px;
+
+    background:
+        linear-gradient(
+            to right,
+            #18251f,
+            #30483b,
+            #17221d
+        );
+
+    border-top:
+        1px solid rgba(200,173,114,.25);
+
+}
+
+
+.library-bookshelf-decoration span:nth-child(1) {
+    height: 75px;
+}
+
+.library-bookshelf-decoration span:nth-child(2) {
+    height: 95px;
+}
+
+.library-bookshelf-decoration span:nth-child(3) {
+    height: 65px;
+}
+
+.library-bookshelf-decoration span:nth-child(4) {
+    height: 105px;
+}
+
+.library-bookshelf-decoration span:nth-child(5) {
+    height: 82px;
+}
+
+.library-bookshelf-decoration span:nth-child(6) {
+    height: 96px;
+}
+
+.library-bookshelf-decoration span:nth-child(7) {
+    height: 70px;
+}
+
+
+/* ==================================================
+   SHARED SECTION HEADING
+   ================================================== */
+
+.library-section-heading {
+
+    text-align: center;
+
+    margin-bottom: 65px;
+
+}
+
+
+.library-section-heading h2 {
+
+    margin: 10px 0;
+
+    color: var(--library-cream);
+
+    font-size:
+        clamp(2.5rem, 5vw, 4rem);
+
+    font-weight: 400;
+
+}
+
+
+.library-divider {
+
+    margin-top: 20px;
+
+    color: var(--library-gold);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.3em;
+
+}
+
+
+/* ==================================================
+   NIGHTSTAND
+   ================================================== */
+
+.nightstand-section {
+
+    padding: 120px 7% 140px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #263a30,
+            #111c17 65%
+        );
+
+}
+
+
+.nightstand-book {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        350px 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+/* ==================================================
+   BOOK COVER
+   ================================================== */
+
+.book-cover {
+
+    height: 490px;
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b2d24,
+            #0b1410
+        );
+
+    border:
+        1px solid var(--library-gold);
+
+    box-shadow:
+        15px 20px 45px
+        rgba(0,0,0,.45);
+
+}
+
+
+.book-cover-inner {
+
+    height: 100%;
+
+    border:
+        1px solid
+        rgba(200,173,114,.4);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+
+.book-cover-symbol {
+
+    color: var(--library-gold);
+
+    font-size: 1.4rem;
+
+}
+
+
+.book-cover-series {
+
+    margin-top: 35px;
+
+    color: var(--library-gold);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.25em;
+
+}
+
+
+.book-cover h3 {
+
+    margin: 30px 0 15px;
+
+    color: var(--library-cream);
+
+    font-size: 2.2rem;
+
+    font-weight: 400;
+
+}
+
+
+.book-cover-author {
+
+    color: var(--library-parchment);
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+
+}
+
+
+/* ==================================================
+   NIGHTSTAND INFORMATION
+   ================================================== */
+
+.book-status {
+
+    color: var(--library-gold);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.2em;
+
+}
+
+
+.nightstand-info h3 {
+
+    margin: 15px 0 5px;
+
+    color: var(--library-cream);
+
+    font-size: 2.8rem;
+
+    font-weight: 400;
+
+}
+
+
+.book-author {
+
+    margin-top: 0;
+
+    color: var(--library-parchment);
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+}
+
+
+.book-rating {
+
+    margin: 25px 0;
+
+    color: var(--library-gold-light);
+
+    letter-spacing: 0.15em;
+
+}
+
+
+.nightstand-note {
+
+    max-width: 500px;
+
+    color: var(--library-muted);
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==================================================
+   READING PROGRESS
+   ================================================== */
+
+.reading-progress {
+
+    max-width: 500px;
+
+    margin-top: 35px;
+
+}
+
+
+.progress-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: var(--library-parchment);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 3px;
+
+    background:
+        rgba(200,173,114,.2);
+
+}
+
+
+.progress-fill {
+
+    width: 42%;
+
+    height: 100%;
+
+    background:
+        var(--library-gold);
+
+}
+
+
+.book-meta {
+
+    color: var(--library-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+/* ==================================================
+   YEAR IN BOOKS
+   ================================================== */
+
+.year-section {
+
+    padding: 120px 7% 140px;
+
+    background: #0b1512;
+
+}
+
+
+.stats-grid {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid
+        rgba(200,173,114,.25);
+
+    border-bottom:
+        1px solid
+        rgba(200,173,114,.25);
+
+}
+
+
+.stat-card {
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border-right:
+        1px solid
+        rgba(200,173,114,.2);
+
+}
+
+
+.stat-card:last-child {
+
+    border-right: none;
+
+}
+
+
+.stat-symbol {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--library-gold);
+
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    color: var(--library-cream);
+
+    font-size: 3rem;
+
+    font-weight: 400;
+
+}
+
+
+.stat-card p {
+
+    margin-top: 8px;
+
+    color: var(--library-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.library-footer {
+
+    padding: 80px 25px;
+
+    text-align: center;
+
+    background: #070d0b;
+
+}
+
+
+.library-footer > div {
+
+    color: var(--library-gold);
+
+    font-size: 1.4rem;
+
+}
+
+
+.library-footer p {
+
+    margin: 20px 0;
+
+    color: var(--library-gold-light);
+
+    font-family:
+        "Parisienne",
+        cursive;
+
+    font-size: 2rem;
+
+}
+
+
+.library-footer span {
+
+    color: var(--library-muted);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .library-header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    .library-navigation {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .nightstand-book {
+
+        grid-template-columns: 280px 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .book-cover {
+
+        height: 420px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .stat-card:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+
+    .stat-card:nth-child(1),
+    .stat-card:nth-child(2) {
+
+        border-bottom:
+            1px solid
+            rgba(200,173,114,.2);
+
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 650px) {
+
+    .library-header {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .library-navigation {
+
+        gap: 12px;
+
+    }
+
+
+    .library-navigation a {
+
+        font-size: 0.5rem;
+
+    }
+
+
+    .library-hero {
+
+        min-height: 650px;
+
+    }
+
+
+    .library-hero h1 {
+
+        font-size: 4rem;
+
+    }
+
+
+    .library-subtitle {
+
+        padding: 0 20px;
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .nightstand-section,
+    .year-section {
+
+        padding:
+            90px 20px 100px;
+
+    }
+
+
+    .nightstand-book {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .book-cover {
+
+        width: 260px;
+
+        height: 370px;
+
+        margin: auto;
+
+    }
+
+
+    .nightstand-info {
+
+        text-align: center;
+
+    }
+
+
+    .nightstand-note,
+    .reading-progress {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .stat-card {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(200,173,114,.2);
+
+    }
+
+
+    .stat-card:last-child {
+
+        border-bottom: none;
+
+    }
+
+}
